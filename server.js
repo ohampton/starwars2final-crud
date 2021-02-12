@@ -17,7 +17,25 @@ app.listen(3000, function() {
     console.log('listening on 3000')
 })
 
+app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: true }))
+
+app.get('/', (req, res) => {
+    db.collection('quotes').find().toArray()
+      .then(results => {
+        console.log(results)
+      })
+      .catch(error => console.error(error))
+    // ...
+  })
+
+app.post('/quotes', (req, res) => {
+    quotesCollection.insertOne(req.body)
+      .then(result => {
+        res.redirect('/')
+      })
+      .catch(error => console.error(error))
+  })
 
 app.post('/quotes', (req, res) => {
     quotesCollection.insertOne(req.body)
@@ -26,6 +44,8 @@ app.post('/quotes', (req, res) => {
       })
       .catch(error => console.error(error))
   })
+
+ 
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
