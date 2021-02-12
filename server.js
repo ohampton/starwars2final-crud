@@ -19,14 +19,17 @@ app.listen(3000, function() {
 
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
+app.use(express.static('public'))
 
 app.get('/', (req, res) => {
     db.collection('quotes').find().toArray()
       .then(results => {
+        res.render('index.ejs', { quotes: results})
         console.log(results)
       })
-      .catch(error => console.error(error))
-    // ...
+      .catch(/* ... */)
+      
   })
 
 app.post('/quotes', (req, res) => {
@@ -35,6 +38,10 @@ app.post('/quotes', (req, res) => {
         res.redirect('/')
       })
       .catch(error => console.error(error))
+  })
+
+  app.put('/quotes', (req, res) => {
+    console.log(req.body)
   })
 
 app.post('/quotes', (req, res) => {
