@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>MY APP</title>
-</head>
-<body>
-    <h1>May Node and Express be with you</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Avengers Assemble</title>
+  </head>
+  <body>
+    <h1>Avengers Quote Initiative</h1>
 
     <form action="/quotes" method="POST">
-        <input type="text" placeholder="name" name="name">
-        <input type="text" placeholder="quote" name="quote">
-        <button type="submit">Submit</button>
-      </form>
-</body>
+      <div class="form-group col-md-3">
+        <label for="exampleInputEmail">Avengers Member</label>
+        <input type="text" class="form-control" placeholder="name" name="name" />
+      </div>
+      <div class="form-group col-md-3">
+        <label for="exampleInputPassword">Avengers Quote</label>
+        <input type="text" class="form-control" placeholder="quote" name="quote" />
+      </div>
+      <button type="submit" class="btn btn-outline-light" data-toggle="button">
+        Submit
+      </button>
+    </form>
+  </body>
 </html>

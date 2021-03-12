@@ -1,0 +1,23 @@
+body {
+    background-image: url("/public/img/Avengers\ logo.jpeg");
+    background-position:initial;
+    background-repeat:no-repeat;
+    background-size: cover;
+    }
+
+h1 {
+    color: whitesmoke;
+    padding: 50px;
+
+}
+
+.btn  {
+    margin-left: 293px;
+}
+
+label {
+    color: white;
+    padding-left: 50px;
+    font-size: 30px;
+    /* font-family: sans-serif; */
+  }
